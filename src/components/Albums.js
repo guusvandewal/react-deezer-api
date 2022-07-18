@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 const l = console.log;
 const Albums = ({ ...props }) => {
-  const [url, setUrl] = useState("https://api.deezer.com/album/302127");
+  const [url, setUrl] = useState("https://api.deezer.com/user/2529/playlists");
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -13,7 +13,7 @@ const Albums = ({ ...props }) => {
         (result) => {
           setIsLoaded(true);
           setItems(result);
-          l(result.artist);
+          l(result.data);
           document.title = url;
         },
         // Note: it's important to handle errors here
@@ -33,18 +33,18 @@ const Albums = ({ ...props }) => {
   } else {
     return (
       <>
-        {
-          <div>
-            <p>{items.artist.name}</p>
-            <img src={items.artist.picture_big} alt=""/>
-              <p>{items.artist.tracklist}</p>
-          </div>
-        }
-        {items.length > 0 && (
-          <div className="grid">
-            {items.map((item, index) => console.log(item))}
-          </div>
-        )}
+        <div className="grid">
+          {items.data.map((item, index) => (
+            <div className="grid__flex">
+              <div key={index}>
+                {item.title}
+                <div>
+                  <img className="grid__img" src={item.picture_big} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </>
     );
   }
