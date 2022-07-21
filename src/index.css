@@ -39,6 +39,7 @@ header {
   align-items: center;
   position: relative;
   margin-bottom: 20px;
+  background-color: #000;
 }
 
 .grid__img {
@@ -64,6 +65,10 @@ header {
   display: block;
   font-size: 9px;
   color: #fff;
+}
+
+.grid__no--preview {
+  color: #FFF;
 }
 
 .pager li {
@@ -92,8 +97,29 @@ header {
   border: none;
 }
 .grid__no--preview {
-  display: none;
+  padding: 20px 0;
+  display: block;
 }
 audio {
-  display: none;
+  filter: sepia(20%) saturate(0%) grayscale(1) contrast(99%) invert(12%);
+  background-color: #000;
+  appearance: none;
+  width: 100%;
+  margin: 20px 0;
 }
+
+button {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  background-color: #000;
+  border:1px solid #000;
+  padding: 5px;
+
+}
+
+button::-webkit-media-controls-enclosure {
+   border-radius: 5px;
+   background-color: green;
+ }

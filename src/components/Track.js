@@ -1,6 +1,7 @@
+
 const Track = (preview) => {
   return (
-      <audio>
+      <audio controls style={{ display: "block" }}>
         <source src={preview.song} type="audio/mpeg" />
       </audio>
   );
