@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Fira Code', sans-serif;
+  font-family: "Fira Code", sans-serif;
 }
 
 *,
@@ -36,9 +36,9 @@ header {
 .grid__flex {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .grid__img {
@@ -46,6 +46,7 @@ header {
   height: 100%;
   object-fit: cover;
   max-width: 800px;
+  margin-bottom: 20px;
 }
 
 .grid__name {
@@ -89,4 +90,10 @@ header {
   appearance: none;
   display: none;
   border: none;
+}
+.grid__no--preview {
+  display: none;
+}
+audio {
+  display: none;
 }
