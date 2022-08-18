@@ -5,7 +5,7 @@ const Albums = ({ ...props }) => {
   const effectCalled = useRef(false);
   const [audioStatus, changeAudioStatus] = useState(false);
   const [url, setUrl] = useState(
-    "https://api.deezer.com/playlist/2896937/tracks"
+    "https://api.deezer.com/playlist/10627907282/tracks"
   );
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -29,7 +29,6 @@ const Albums = ({ ...props }) => {
           (result) => {
             setIsLoaded(true);
             setItems(result);
-            l(result.data);
             document.title = url;
           },
           // Note: it's important to handle errors here
